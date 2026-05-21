@@ -1,0 +1,33 @@
+// wiki
+// https://yalter.github.io/niri/Configuration:-Introduction
+
+include "niri-colors.kdl"
+include "glide.kdl"
+include "binds.kdl"
+include "display.kdl"
+include "layout.kdl"
+include "workspace.kdl"
+include "rules.kdl"
+include "keys.kdl"
+include "startup.kdl"
+include "input.kdl"
+include "layers.kdl"
+
+
+prefer-no-csd
+environment {
+    ELECTRON_OZONE_PLATFORM_HINT "auto"
+    _JAVA_AWT_WM_NONREPARENTING "1"
+    AWT_TOOLKIT "MToolkit"
+}
+
+hotkey-overlay {
+    skip-at-startup
+}
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+animations {
+    // Uncomment to turn off all animations.
+    // off
+       slowdown 2.0
+}

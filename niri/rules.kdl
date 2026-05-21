@@ -1,0 +1,147 @@
+//                $$\                                       $$\           
+//                \__|                                      $$ |          
+//  $$\  $$\  $$\ $$\ $$$$$$$\           $$$$$$\  $$\   $$\ $$ | $$$$$$\  
+//  $$ | $$ | $$ |$$ |$$  __$$\ $$$$$$\ $$  __$$\ $$ |  $$ |$$ |$$  __$$\ 
+//  $$ | $$ | $$ |$$ |$$ |  $$ |\______|$$ |  \__|$$ |  $$ |$$ |$$$$$$$$ |
+//  $$ | $$ | $$ |$$ |$$ |  $$ |        $$ |      $$ |  $$ |$$ |$$   ____|
+//  \$$$$$\$$$$  |$$ |$$ |  $$ |        $$ |      \$$$$$$  |$$ |\$$$$$$$\ 
+//  \_____\____/ \__|\__|  \__|        \__|       \______/ \__| \_______|
+//                                                                      
+//                                                                      
+                                                                      
+
+
+
+window-rule {
+	match at-startup=true app-id=r#"firefox$"#
+	open-on-output "DP-1"
+  open-on-workspace "main"
+	open-maximized true
+  /-background-effect {
+    blur true
+  }
+}
+
+window-rule {
+	match at-startup=true app-id=r#"Bitwarden$"#
+	open-on-output "HDMI-A-1"
+  open-on-workspace "toputility"
+}
+
+window-rule {
+	match at-startup=true app-id=r#"discord|com\.discordapp\.Discord$"#
+	open-on-output "DP-2"
+	open-on-workspace "discord"
+	open-maximized true
+}
+
+window-rule {
+	match app-id=r#"^kitty$"#
+	open-on-output "DP-1"
+  open-on-workspace "pr*ca"
+}
+
+window-rule {
+	match app-id=r#"^net.lutris.Lutris$"#
+	open-on-output "DP-1"
+  open-on-workspace "steametc"
+}
+
+//window-rule {
+//	match app-id=r#"^org\.pulseaudio\.pavucontrol$"#
+//	open-on-output "DP-1"
+// 	open-on-workspace "toputility"
+//}
+
+window-rule {
+	match app-id=r#"^com\.obsproject\.Studio$"#
+	open-on-output "HDMI-A-1"
+	open-on-workspace "topwork"
+	open-maximized true
+}
+
+window-rule {
+	match title=r#"Nicotine+"#
+	open-on-workspace "toputility"
+	open-maximized false
+}
+
+window-rule {
+	match app-id=r#"cool-retro-term$"# 
+	open-on-output "HDMI-A-1"
+	open-on-workspace "top"
+  opacity 0.95
+	default-column-width { fixed 623; }
+}
+
+window-rule {
+	match app-id=r#"Alacritty$"#
+	open-on-output "HDMI-A-1"
+	open-on-workspace "top"
+  opacity 0.95
+	default-column-width { fixed 623; }
+}
+
+window-rule {
+  match app-id=r#"steam$"#
+  open-on-output "DP-1"
+  open-on-workspace "steametc"
+}
+
+window-rule {
+	match at-startup=true app-id=r#"Alacritty$"# title=r#"peaclock$"# is-focused=true
+}
+
+spawn-sh-at-startup "sleep 10 && niri msg action consume-window-into-column && niri msg action consume-window-into-column"
+
+window-rule {
+    match app-id=r#"cool-retro-term$"#
+    focus-ring {
+        on
+      }
+}
+
+
+
+window-rule {
+    match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
+    default-floating-position x=10 y=10 relative-to="bottom-right"
+}
+
+window-rule {
+    // This regular expression is intentionally made as specific as possible,
+    // since this is the default config, and we want no false positives.
+    // You can get away with just app-id="wezterm" if you want.
+    match app-id=r#"^org\.wezfurlong\.wezterm$"#
+    default-column-width {}
+}
+
+// Open the Firefox picture-in-picture player as floating by default.
+window-rule {
+    // This app-id regular expression will work for both:
+    // - host Firefox (app-id is "firefox")
+    // - Flatpak Firefox (app-id is "org.mozilla.firefox")
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    open-floating true
+}
+
+// Example: block out two password managers from screen capture.
+// (This example rule is commented out with a "/-" in front.)
+window-rule {
+    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+    match app-id=r#"^Bitwarden$"#
+    //block-out-from "screen-capture"
+
+    // Use this instead if you want them visible on third-party screenshot tools.
+    block-out-from "screencast"
+}
+
+// Example: enable rounded corners for all windows.
+// (This example rule is commented out with a "/-" in front.)
+/-window-rule {
+    geometry-corner-radius 12
+    clip-to-geometry true
+}
+
+

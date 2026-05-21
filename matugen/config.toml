@@ -1,0 +1,38 @@
+[config]
+
+[config.wallpaper]
+command = ""
+set = true
+
+[templates.kitty]
+input_path = '~/.config/matugen/templates/kitty-colors.conf'
+output_path = '~/.config/kitty/matugen/colors-matugen.conf'
+
+[templates.alacritty]
+input_path = '~/.config/matugen/templates/alacritty.toml'
+output_path = '~/.config/alacritty/themes/themes/matugen.toml'
+post_hook = "touch ~/.config/alacritty/alacritty.toml"
+
+[templates.vicinae]
+input_path = './templates/vicinae.toml'
+output_path = '~/.local/share/vicinae/themes/matugen.toml'
+post_hook = 'vicinae theme set matugen'
+
+# Gtk3
+[templates.gtk3]
+input_path = '~/.config/matugen/templates/matugen-gtk.css'
+output_path = '~/.config/gtk-3.0/gtk.css'
+
+# Gtk4
+[templates.gtk4]
+input_path = '~/.config/matugen/templates/matugen-gtk.css'
+output_path = '~/.config/gtk-4.0/gtk.css'
+
+# Kvantum
+[templates.kvantum]
+input_path = '~/.config/matugen/templates/matugen.kvconfig'
+output_path = '~/.config/Kvantum/matugen/matugen.kvconfig'
+
+[templates.niri]
+input_path = "~/.config/matugen/templates/niri-colors.kdl"
+output_path = "~/.config/niri/niri-colors.kdl"

@@ -1,0 +1,36 @@
+//              $$\                          $$\                         
+//              $$ |                         $$ |                        
+//   $$$$$$$\ $$$$$$\    $$$$$$\   $$$$$$\ $$$$$$\   $$\   $$\  $$$$$$\  
+//  $$  _____|\_$$  _|   \____$$\ $$  __$$\\_$$  _|  $$ |  $$ |$$  __$$\ 
+//  \$$$$$$\    $$ |     $$$$$$$ |$$ |  \__| $$ |    $$ |  $$ |$$ /  $$ |
+//   \____$$\   $$ |$$\ $$  __$$ |$$ |       $$ |$$\ $$ |  $$ |$$ |  $$ |
+//  $$$$$$$  |  \$$$$  |\$$$$$$$ |$$ |       \$$$$  |\$$$$$$  |$$$$$$$  |
+//  \_______/    \____/  \_______|\__|        \____/  \______/ $$  ____/ 
+//                                                           $$ |      
+//                                                           $$ |      
+//                                                           \__|      
+//
+
+spawn-at-startup "opendeck"
+spawn-at-startup "vicinae" "server"
+spawn-sh-at-startup "sleep 10 && dev.geopjr.Turntable --headless"
+spawn-at-startup "lutris"
+spawn-at-startup "nicotine"
+spawn-at-startup "bitwarden-desktop"
+spawn-at-startup "flatpak" "run" "com.discordapp.Discord"
+spawn-sh-at-startup "firefox"
+spawn-at-startup "awww-daemon"
+spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+spawn-at-startup "kitty"
+spawn-sh-at-startup "sleep 3 && cool-retro-term --profile jajo -e kew all"
+spawn-sh-at-startup "sleep 5.2 && alacritty -T peaclock -e bash -c 'peaclock --config-dir ~/.config/peaclock'"
+spawn-sh-at-startup "sleep 5.4 && alacritty -T matrix -e bash -c 'unimatrix -n -s 96 -l o -c white'"
+spawn-sh-at-startup "sleep 5.6 && alacritty -T pipes -e bash -c 'pipes.sh -C'"
+spawn-sh-at-startup "sleep 5.8 && alacritty -T lava -e bash -c 'lavat d'"
+spawn-sh-at-startup "rm -r ~/.config/obs-studio/.sentinel"
+spawn-sh-at-startup "sleep 2 && obs --disable-shutdown-check --startreplaybuffer"
+// spawn-sh-at-startup "sleep 120 && /home/suika/.local/bin/obsws-cli -p 2TuIbw8yHyTe2W replaybuffer start"
+
+
+// To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
+// spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
