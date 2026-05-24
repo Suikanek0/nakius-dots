@@ -8,6 +8,7 @@ require("conf.perms")
 require("conf.looks")
 require("conf.layerrule")
 require("conf.workspaces")
+require("conf.colors")
 
 ----------------
 ----  MISC  ----
