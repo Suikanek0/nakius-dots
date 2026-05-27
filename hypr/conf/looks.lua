@@ -4,59 +4,59 @@
 
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
-	general = {
-		gaps_in = 5,
-		gaps_out = 20,
+  general = {
+    gaps_in = 5,
+    gaps_out = 20,
 
-		border_size = 2,
+    border_size = 2,
 
-		-- Set to true to enable resizing windows by clicking and dragging on borders and gaps
-		resize_on_border = false,
+    -- Set to true to enable resizing windows by clicking and dragging on borders and gaps
+    resize_on_border = false,
 
-		-- Please see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Tearing/ before you turn this on
-		allow_tearing = false,
+    -- Please see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Tearing/ before you turn this on
+    allow_tearing = false,
 
-		layout = "scrolling",
-	},
+    layout = "dwindle",
+  },
 
-	decoration = {
-		rounding = 0,
-		rounding_power = 0,
+  decoration = {
+    rounding = 0,
+    rounding_power = 0,
 
-		-- Change transparency of focused and unfocused windows
-		active_opacity = 1.0,
-		inactive_opacity = 1.0,
+    -- Change transparency of focused and unfocused windows
+    active_opacity = 1.0,
+    inactive_opacity = 1.0,
 
-		shadow = {
-			enabled = true,
-			range = 20,
-			offset = { 0, 2 },
-			render_power = 10,
-			color = "rgba(00000020)",
-		},
+    shadow = {
+      enabled = true,
+      range = 20,
+      offset = { 0, 2 },
+      render_power = 10,
+      color = "rgba(00000020)",
+    },
 
-		blur = {
-			enabled = true,
-			xray = true,
-			special = false,
-			new_optimizations = true,
-			size = 10,
-			passes = 3,
-			brightness = 1,
-			noise = 0.05,
-			contrast = 0.89,
-			vibrancy = 0.5,
-			vibrancy_darkness = 0.5,
-			popups = false,
-			popups_ignorealpha = 0.6,
-			input_methods = true,
-			input_methods_ignorealpha = 0.8,
-		},
-	},
+    blur = {
+      enabled = true,
+      xray = true,
+      special = false,
+      new_optimizations = true,
+      size = 10,
+      passes = 3,
+      brightness = 1,
+      noise = 0.05,
+      contrast = 0.89,
+      vibrancy = 0.5,
+      vibrancy_darkness = 0.5,
+      popups = false,
+      popups_ignorealpha = 0.6,
+      input_methods = true,
+      input_methods_ignorealpha = 0.8,
+    },
+  },
 
-	animations = {
-		enabled = true,
-	},
+  animations = {
+    enabled = true,
+  },
 })
 
 -- Default curves and animations, see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Animations/
@@ -107,9 +107,25 @@ hl.animation({ leaf = "zoomFactor", enabled = true, speed = 7, bezier = "quick" 
 
 -- See https://wiki.hypr.land/Configuring/Layouts/Scrolling-Layout/ for more
 hl.config({
-	scrolling = {
-		fullscreen_on_one_column = false,
-		column_width = 0.5,
-		focus_fit_method = 1,
-	},
+  scrolling = {
+    fullscreen_on_one_column = false,
+    column_width = 0.5,
+    focus_fit_method = 1,
+  },
+})
+
+hl.config({
+  dwindle = {
+    force_split                  = 0,
+    preserve_split               = true,
+    smart_split                  = false,
+    smart_resizing               = true,
+    permanent_direction_override = false,
+    special_scale_factor         = 1,
+    split_width_multiplier       = 1.0,
+    use_active_for_splits        = true,
+    default_split_ratio          = 1.0,
+    split_bias                   = 0,
+    precise_mouse_move           = false,
+  },
 })
