@@ -28,9 +28,8 @@ binds {
 
     Mod+E hotkey-overlay-title="Open File Manager" {spawn "dolphin"; }
     Mod+Q hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
-    Mod+Shift+Q hotkey-overlay-title="CRT term" {spawn-sh "cool-retro-term --profile jajo"; }
-    Mod+Alt+Q {spawn "alacritty"; }
-    Mod+W hotkey-overlay-title="Run an Application: firefox" { spawn "firefox"; }
+    Mod+Shift+Q {spawn-sh "kitty --app-id=looks"; }
+    Mod+W hotkey-overlay-title="Run an Application: firefox" { spawn "zen-browser"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
     Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
