@@ -26,7 +26,7 @@ binds {
 
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    Mod+E hotkey-overlay-title="Open File Manager" {spawn "dolphin"; }
+    Mod+E hotkey-overlay-title="Open File Manager" {spawn-sh "kitty --app-id=yazi yazi"; }
     Mod+Q hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
     Mod+Shift+Q {spawn-sh "kitty --app-id=looks"; }
     Mod+W hotkey-overlay-title="Run an Application: firefox" { spawn "zen-browser"; }

@@ -29,7 +29,7 @@ window-rule {
 }
 
 window-rule {
-	match at-startup=true app-id=r#"discord$"#
+	match at-startup=true app-id=r#"vesktop$"#
 	open-on-output "DP-2"
 	open-on-workspace "discord"
 	open-maximized true
@@ -38,7 +38,21 @@ window-rule {
 window-rule {
 	match app-id=r#"^kitty$"#
 	open-on-output "DP-1"
+  opacity 0.75
   open-on-workspace "pr*ca"
+  background-effect {
+        blur true
+        xray true
+    }
+}
+
+window-rule {
+	match app-id=r#"^yazi$"#
+  opacity 0.75
+  background-effect {
+        blur true
+        xray true
+    }
 }
 
 window-rule {
@@ -70,8 +84,32 @@ window-rule {
 	match app-id=r#"looks$"#
 	open-on-output "HDMI-A-1"
 	open-on-workspace "top"
-  opacity 0.95
+  opacity 0.75
 	default-column-width { fixed 623; }
+  background-effect {
+        blur true
+        xray true
+    }
+}
+
+window-rule {
+	match app-id=r#"music$"#
+	open-on-output "HDMI-A-1"
+	open-on-workspace "top"
+  opacity 0.75
+	default-column-width { fixed 1244; }
+  background-effect {
+        blur true
+        xray true
+    }
+}
+
+window-rule {
+	match app-id=r#"zen$"#
+  background-effect {
+        blur true
+        xray true
+    }
 }
 
 window-rule {
@@ -81,11 +119,10 @@ window-rule {
 }
 
 window-rule {
-	match at-startup=true app-id=r#"Alacritty$"# title=r#"peaclock$"# is-focused=true
+  match app-id=r#"opendeck$"#
+  open-on-output "HDMI-A-1"
+  open-on-workspace "toputility"
 }
-
-spawn-sh-at-startup "sleep 10 && niri msg action consume-window-into-column && niri msg action consume-window-into-column"
-
 
 window-rule {
     match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
@@ -129,3 +166,6 @@ window-rule {
 }
 
 
+window-rule {
+  draw-border-with-background false
+}
