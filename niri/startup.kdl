@@ -11,7 +11,7 @@
 //                                                           \__|      
 //
 
-spawn-sh-at-startup "sleep 2 && mpc clear && mpc add / && mpc shuffle && mpc consume on"
+spawn-sh-at-startup "sleep 2 && mpc clear && mpc add / && mpc shuffle && mpc consume off"
 spawn-at-startup "opendeck"
 spawn-at-startup "vicinae" "server"
 spawn-at-startup "lutris"
@@ -26,7 +26,7 @@ spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 spawn-at-startup "kitty"
 spawn-sh-at-startup "sleep 4.2 && kitty --app-id=looks lavat" 
 spawn-sh-at-startup "sleep 3.2 && kitty --app-id=looks peaclock --config-dir ~/.config/peaclock"
-spawn-sh-at-startup "sleep 2.2 && kitty --app-id=looks cmatrix"
+spawn-sh-at-startup "sleep 2.2 && kitty --app-id=looks cmatrix -C white"
 spawn-sh-at-startup "sleep 1.2 && kitty --app-id=looks pipes.sh"
 spawn-sh-at-startup "sleep 5.2 && kitty --app-id=music -o font_size=14 rmpc"
 spawn-sh-at-startup "rm -r ~/.config/obs-studio/.sentinel"
